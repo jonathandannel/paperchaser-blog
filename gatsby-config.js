@@ -22,6 +22,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-remark-prismjs',
+      options: {
+        inlineCodeMarker: '÷',
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/blog`,
