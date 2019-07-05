@@ -1,21 +1,143 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
+title: Painless GraphQL schema generation with Gatsby
+date: '2019-05-01T22:12:03.284Z'
 ---
 
-This is my first post on my new fake blog! How exciting!
+It's easy.
 
-I'm sure I'll write a lot more interesting things in the future.
+- Add the json transformer plugin.
 
-Oh, and here's a great quote from this Wikipedia on
-[salted duck eggs](http://en.wikipedia.org/wiki/Salted_duck_egg).
+`npm install --save gatsby-transformer-json`
 
-> A salted duck egg is a Chinese preserved food product made by soaking duck
-> eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-> supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-> charcoal paste. The eggs may also be sold with the salted paste removed,
-> wrapped in plastic, and vacuum packed. From the salt curing process, the
-> salted duck eggs have a briny aroma, a gelatin-like egg white and a
-> firm-textured, round yolk that is bright orange-red in color.
+- In your `gatsby-config.js`, add the following:
 
-![Chinese Salty Egg](./salty_egg.jpg)
+```javascript
+'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/data`,
+      },
+    },
+```
+
+- In `src/data`, let's create a json file with our blog's contributors.
+
+```json
+[
+  {
+    "name": "Joshua Koudys",
+    "email": "josh@clausehound.com",
+    "role": "Chief Technology Officer"
+  },
+  {
+    "name": "Greg O'Grady",
+    "email": "greg@clausehound.com",
+    "role": "Software Engineer"
+  },
+  {
+    "name": "Ian Hume",
+    "email": "ian@clausehound.com",
+    "role": "Backend Developer"
+  },
+  {
+    "name": "Jonathan Dannel",
+    "email": "jonathan@clausehound.com",
+    "role": "Front End Developer"
+  }
+]
+```
+
+- Add a script to your `package.json`:
+  `GATSBY_GRAPHQL_IDE=playground gatsby develop`
+
+- Run it, and navigate to the GraphQL development playground. Click the 'schema' tab on the right, and voila:
+
+```graphql
+type ContributorsJson implements Node {
+  id: ID!
+  parent: Node
+  children: [Node!]!
+  internal: Internal!
+  name: String
+  email: String
+  role: String
+}
+```
+
+```graphql
+contributorsJson(
+    id: StringQueryOperatorInput
+    parent: NodeFilterInput
+    children: NodeFilterListInput
+    internal: InternalFilterInput
+    name: StringQueryOperatorInput
+    email: StringQueryOperatorInput
+    role: StringQueryOperatorInput
+  ): ContributorsJson
+  allContributorsJson(
+    filter: ContributorsJsonFilterInput
+    sort: ContributorsJsonSortInput
+    skip: Int
+    limit: Int
+  ): ContributorsJsonConnection
+```
+
+Our GraphQL types are ready to be queried! Gatsby has conveniently generated an `allContributorsJson` object with all our contributors, and a `contributorsJson` type for us to run queries on.
+
+```graphql
+query MyQuery {
+  allContributorsJson {
+    edges {
+      node {
+        name
+        email
+        role
+      }
+    }
+  }
+}
+```
+
+which returns our data:
+
+```json
+{
+  "data": {
+    "allContributorsJson": {
+      "edges": [
+        {
+          "node": {
+            "name": "Joshua Koudys",
+            "email": "josh@clausehound.com",
+            "role": "Chief Technology Officer"
+          }
+        },
+        {
+          "node": {
+            "name": "Greg O'Grady",
+            "email": "greg@clausehound.com",
+            "role": "Software Engineer"
+          }
+        },
+        {
+          "node": {
+            "name": "Ian Hume",
+            "email": "ian@clausehound.com",
+            "role": "Backend Developer"
+          }
+        },
+        {
+          "node": {
+            "name": "Jonathan Dannel",
+            "email": "jonathan@clausehound.com",
+            "role": "Front End Developer"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+Yay!
