@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Joshua Koudys",
+    "email": "josh@clausehound.com",
+    "role": "Chief Technology Officer"
+  },
+  {
+    "name": "Greg O'Grady",
+    "email": "greg@clausehound.com",
+    "role": "Software Engineer"
+  },
+  {
+    "name": "Ian Hume",
+    "email": "ian@clausehound.com",
+    "role": "Backend Developer"
+  },
+  {
+    "name": "Jonathan Dannel",
+    "email": "jonathan@clausehound.com",
+    "role": "Front End Developer"
+  }
+]
