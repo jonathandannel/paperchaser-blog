@@ -16,11 +16,11 @@ const BlogIndex = ({ data: { location, site, allMarkdownRemark } }) => {
       location,
       title,
     },
+    h('h4', null, tagline),
     h(Bio),
     h(SEO, {
       title: 'All posts',
     }),
-    h('h4', null, tagline),
     posts.map(({ node }) => {
       const frontMatterTitle = node.frontmatter.title || node.fields.slug;
       return h(
