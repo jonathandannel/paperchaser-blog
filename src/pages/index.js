@@ -2,13 +2,13 @@ import { createElement as h } from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
+import Bio from '../components/bio';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 
-const BlogIndex = ({ location, data: { site, allMarkdownRemark, allContributorsJson } }) => {
+const BlogIndex = ({ data: { location, site, allMarkdownRemark } }) => {
   const posts = allMarkdownRemark.edges;
   const { tagline, title } = site.siteMetadata;
-  const contributors = allContributorsJson.nodes;
 
   return h(
     Layout,
@@ -16,6 +16,7 @@ const BlogIndex = ({ location, data: { site, allMarkdownRemark, allContributorsJ
       location,
       title,
     },
+    h(Bio),
     h(SEO, {
       title: 'All posts',
     }),
@@ -65,13 +66,6 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         tagline
-      }
-    }
-    allContributorsJson {
-      nodes {
-        name
-        email
-        role
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
