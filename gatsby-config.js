@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Paperchaser',
+    title: 'paperchaser',
     author: 'Jonathan Dannel',
-    description: "Paperchaser.io's official blog",
-    siteUrl: 'https://gatsby-starter-blog-demo.netlify.com/',
+    description: 'Paperchaser tech blog',
+    tagline: 'an iterative process',
+    siteUrl: 'http://localhost:8000',
     social: {
       twitter: 'clausehound',
     },
