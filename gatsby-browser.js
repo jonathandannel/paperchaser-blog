@@ -2,4 +2,4 @@
 import 'typeface-montserrat';
 import 'typeface-merriweather';
 
-require('prismjs/themes/prism-twilight.css');
+require('prismjs/themes/prism-tomorrow.css');
