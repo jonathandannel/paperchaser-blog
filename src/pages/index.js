@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 
-const BlogIndex = ({ data: { site, allMarkdownRemark, allContributorsJson } }) => {
+const BlogIndex = ({ location, data: { site, allMarkdownRemark, allContributorsJson } }) => {
   const posts = allMarkdownRemark.edges;
   const { tagline, title } = site.siteMetadata;
   const contributors = allContributorsJson.nodes;
@@ -13,7 +13,7 @@ const BlogIndex = ({ data: { site, allMarkdownRemark, allContributorsJson } }) =
   return h(
     Layout,
     {
-      location: this.props.location,
+      location,
       title,
     },
     h(SEO, {
