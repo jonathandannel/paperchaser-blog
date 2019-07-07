@@ -28,6 +28,7 @@ module.exports = {
         inlineCodeMarker: '÷',
       },
     },
+    'gatsby-plugin-material-ui',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
