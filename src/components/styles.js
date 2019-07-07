@@ -25,6 +25,4 @@ const layoutStyles = makeStyles(({ breakpoints }) => ({
   },
 }));
 
-export default {
-  layoutStyles,
-};
+export default layoutStyles;
