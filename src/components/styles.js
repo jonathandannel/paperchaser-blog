@@ -7,6 +7,10 @@ const layoutStyles = makeStyles(({ breakpoints }) => ({
     marginRight: 'auto',
     maxWidth: rhythm(24),
     padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+    height: '100vh',
+  },
+  splitContainer: {
+    display: 'flex',
   },
   headerInPost: {
     fontSize: '1rem',
@@ -22,6 +26,10 @@ const layoutStyles = makeStyles(({ breakpoints }) => ({
     boxShadow: 'none',
     textDecoration: 'none',
     color: 'inherit',
+  },
+  body: {
+    display: 'flex',
+    height: '100vh',
   },
 }));
 
