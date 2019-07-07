@@ -2,11 +2,10 @@ import { createElement as h } from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import Bio from '../components/bio';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 
-const BlogIndex = ({ data: { location, site, allMarkdownRemark } }) => {
+const BlogIndex = ({ location, data: { site, allMarkdownRemark } }) => {
   const posts = allMarkdownRemark.edges;
   const { tagline, title } = site.siteMetadata;
 
@@ -17,7 +16,6 @@ const BlogIndex = ({ data: { location, site, allMarkdownRemark } }) => {
       title,
     },
     h('h4', null, tagline),
-    h(Bio),
     h(SEO, {
       title: 'All posts',
     }),

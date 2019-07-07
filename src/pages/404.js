@@ -4,8 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const NotFoundPage = ({ props }) => {
-  const { data, location } = props;
+const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   return React.createElement(
     Layout,
