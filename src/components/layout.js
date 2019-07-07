@@ -1,27 +1,28 @@
 import { createElement as h } from 'react';
 import { Link } from 'gatsby';
 
-import { rhythm, scale } from '../utils/typography';
+import { scale } from '../utils/typography';
 
-const Layout = ({ location, title, children }) => {
+import layoutStyles from './styles';
+
+const Layout = ({ location: { pathname }, title, children }) => {
+  const { headerInMain, headerInPost, linkStyle, main, contributorPanel } = layoutStyles();
+
   const rootPath = `${__PATH_PREFIX__}/`;
   let header;
 
-  if (location.pathname === rootPath) {
+  if (pathname === rootPath) {
     header = h(
       'h1',
       {
-        style: { ...scale(1.5), marginBottom: rhythm(1.5), marginTop: 0 },
+        className: headerInMain,
+        style: { ...scale(1.5) },
       },
       h(
         Link,
         {
-          style: {
-            boxShadow: 'none',
-            textDecoration: 'none',
-            color: 'inherit',
-          },
           to: '/',
+          className: linkStyle,
         },
         title,
       ),
@@ -30,19 +31,12 @@ const Layout = ({ location, title, children }) => {
     header = h(
       'h3',
       {
-        style: {
-          fontFamily: 'Montserrat, sans-serif',
-          marginTop: 0,
-        },
+        className: headerInPost,
       },
       h(
         Link,
         {
-          style: {
-            boxShadow: 'none',
-            textDecoration: 'none',
-            color: 'inherit',
-          },
+          className: linkStyle,
           to: '/',
         },
         title,
@@ -53,12 +47,7 @@ const Layout = ({ location, title, children }) => {
   return h(
     'div',
     {
-      style: {
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      },
+      className: main,
     },
     h('header', null, header),
     h('main', null, children),
