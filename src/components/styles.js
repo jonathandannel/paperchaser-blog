@@ -6,7 +6,7 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
   mainContent: {
     marginLeft: 'auto',
     marginRight: 'auto',
-    maxWidth: rhythm(24),
+    maxWidth: rhythm(30),
     padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
   },
   splitContainer: {
@@ -50,12 +50,15 @@ export const headerStyles = makeStyles(({ breakpoints }) => ({
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    height: 100% !important;
+    height: 100%;
   }
   html {
-    height: 100vh !important;
+    height: 100vh;
   }
   #___gatsby {
-    height: 100% !important;
+    height: 100%;
+  }
+  #gatsby-focus-wrapper {
+    height: 100%;
   }
 `;

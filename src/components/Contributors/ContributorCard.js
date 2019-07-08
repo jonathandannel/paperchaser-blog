@@ -6,13 +6,18 @@ import { rhythm } from '../../utils/typography';
 
 import contributorStyles from './styles';
 
-const ContributorCard = ({ name, email, role }) => {
-  const { contributorsMain, contributorBox, contributorInfo } = contributorStyles();
+const ContributorCard = ({ name, email, role, imageUrl }) => {
+  const { contributorCard, nameAndAvatar, avatar } = contributorStyles();
 
   return h(
-    Card,
-    { style: { display: 'flex', flexDirection: 'column' } },
-    h('span', {}, name),
+    'div',
+    { className: contributorCard },
+    h(
+      'div',
+      { className: nameAndAvatar },
+      h(Avatar, { className: avatar, color: 'green' }, h('img', { href: imageUrl })),
+      h('span', {}, name),
+    ),
     h('span', {}, email),
     h('span', {}, role),
   );

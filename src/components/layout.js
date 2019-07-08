@@ -60,19 +60,19 @@ const Layout = ({ location: { pathname }, title, children }) => {
         },
         h('span', null, titleText),
         h('main', null, children),
-      ),
-      h(
-        'footer',
-        null,
-        '\xA9 ',
-        new Date().getFullYear(),
-        ' ',
         h(
-          'a',
-          {
-            href: 'https://clausehound.com/documents',
-          },
-          'Clausehound',
+          'footer',
+          null,
+          '\xA9 ',
+          new Date().getFullYear(),
+          ' ',
+          h(
+            'a',
+            {
+              href: 'https://clausehound.com/documents',
+            },
+            'Clausehound',
+          ),
         ),
       ),
     ),

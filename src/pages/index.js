@@ -38,7 +38,7 @@ const BlogIndex = ({ location, data: { site, allMarkdownRemark } }) => {
             {
               style: {
                 boxShadow: 'none',
-                color: '#e18819',
+                color: '#ff7878',
               },
               to: node.fields.slug,
             },

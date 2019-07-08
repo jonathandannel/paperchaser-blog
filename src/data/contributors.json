@@ -2,21 +2,25 @@
   {
     "name": "Joshua Koudys",
     "email": "josh@clausehound.com",
-    "role": "Chief Technology Officer"
+    "role": "Chief Technology Officer",
+    "imageUrl": "public/images/jonathan.jpeg"
   },
   {
     "name": "Greg O'Grady",
     "email": "greg@clausehound.com",
-    "role": "Software Engineer"
+    "role": "Software Engineer",
+    "imageUrl": "public/images/jonathan.jpeg"
   },
   {
     "name": "Ian Hume",
     "email": "ian@clausehound.com",
-    "role": "Backend Developer"
+    "role": "Backend Developer",
+    "imageUrl": "public/images/jonathan.jpeg"
   },
   {
     "name": "Jonathan Dannel",
     "email": "jonathan@clausehound.com",
-    "role": "Front End Developer"
+    "role": "Front End Developer",
+    "imageUrl": "public/images/jonathan.jpeg"
   }
 ]
