@@ -1,6 +1,9 @@
 import { createElement as h } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
+import { Avatar } from '@material-ui/core';
+import { rhythm } from '../../utils/typography';
+
 import contributorStyles from './styles';
 
 const ContributorPanel = () => {

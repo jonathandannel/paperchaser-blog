@@ -27,9 +27,24 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
     textDecoration: 'none',
     color: 'inherit',
   },
-  body: {
-    display: 'flex',
+  mainContainer: {
     height: '100%',
+    display: 'flex',
+  },
+}));
+
+export const headerStyles = makeStyles(({ breakpoints }) => ({
+  headerContainer: {
+    width: '100%',
+    display: 'flex',
+  },
+  grow: {
+    flexGrow: 1,
+  },
+  linkStyle: {
+    boxShadow: 'none',
+    textDecoration: 'none',
+    color: 'inherit',
   },
 }));
 

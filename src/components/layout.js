@@ -1,16 +1,19 @@
 import { createElement as h } from 'react';
 import { Link } from 'gatsby';
+
 import { scale } from '../utils/typography';
 import { GlobalStyle, layoutStyles } from './styles';
 
+import ContributorPanel from './Contributors';
+
 const Layout = ({ location: { pathname }, title, children }) => {
-  const { headerInMain, headerInPost, linkStyle, mainContent, body } = layoutStyles();
+  const { headerInMain, headerInPost, linkStyle, mainContent, mainContainer } = layoutStyles();
 
   const rootPath = `${__PATH_PREFIX__}/`;
-  let header;
+  let titleText;
 
   if (pathname === rootPath) {
-    header = h(
+    titleText = h(
       'h1',
       {
         className: headerInMain,
@@ -26,7 +29,7 @@ const Layout = ({ location: { pathname }, title, children }) => {
       ),
     );
   } else {
-    header = h(
+    titleText = h(
       'h3',
       {
         className: headerInPost,
@@ -44,14 +47,15 @@ const Layout = ({ location: { pathname }, title, children }) => {
 
   return h(
     'div',
-    { className: body },
+    { className: mainContainer },
     h(GlobalStyle),
+    h(ContributorPanel),
     h(
       'div',
       {
         className: mainContent,
       },
-      h('header', null, header),
+      h('span', null, titleText),
       h('main', null, children),
     ),
     h(
