@@ -13,7 +13,7 @@ const ContributorPanel = ({ contributors, contributorImages }) => {
   return h(
     'div',
     { className: contributorsMain },
-    data.allContributorsJson.nodes.map(({ name, email, role }) => h(ContributorCard, {
+    contributors.nodes.map(({ name, email, role }) => h(ContributorCard, {
         name,
         email,
         role,

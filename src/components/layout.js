@@ -6,7 +6,7 @@ import { GlobalStyle, layoutStyles } from './styles';
 
 import ContributorPanel from './Contributors';
 
-const Layout = ({ contributors, location: { pathname }, title, children }) => {
+const Layout = ({ contributors, contributorImages, location: { pathname }, title, children }) => {
   const { headerInMain, headerInPost, linkStyle, mainContent, mainContainer } = layoutStyles();
 
   const rootPath = `${__PATH_PREFIX__}/`;
@@ -52,7 +52,7 @@ const Layout = ({ contributors, location: { pathname }, title, children }) => {
       'div',
       { className: mainContainer },
       h(GlobalStyle),
-      h(ContributorPanel),
+      pathname === rootPath && h(ContributorPanel, { contributors, contributorImages }),
       h(
         'div',
         {

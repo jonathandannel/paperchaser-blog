@@ -6,16 +6,8 @@ import { rhythm } from '../../utils/typography';
 
 import contributorStyles from './styles';
 
-const ContributorCard = ({ name, email, role, image }) => {
-  const [passedImage, setPassedImage] = useState(image);
+const ContributorCard = ({ name, email, role }) => {
   const { contributorCard, nameAndAvatar, avatar } = contributorStyles();
-
-  debugger;
-
-  const theImage = image.childImagesharp;
-
-  debugger;
-
   return h(
     'div',
     { className: contributorCard },
