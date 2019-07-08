@@ -1,13 +1,13 @@
 import { makeStyles } from '@material-ui/core';
+import { createGlobalStyle } from 'styled-components';
 import { rhythm } from '../utils/typography';
 
-const layoutStyles = makeStyles(({ breakpoints }) => ({
-  main: {
+export const layoutStyles = makeStyles(({ breakpoints }) => ({
+  mainContent: {
     marginLeft: 'auto',
     marginRight: 'auto',
     maxWidth: rhythm(24),
     padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-    height: '100vh',
   },
   splitContainer: {
     display: 'flex',
@@ -29,8 +29,18 @@ const layoutStyles = makeStyles(({ breakpoints }) => ({
   },
   body: {
     display: 'flex',
-    height: '100vh',
+    height: '100%',
   },
 }));
 
-export default layoutStyles;
+export const GlobalStyle = createGlobalStyle`
+  body {
+    height: 100% !important;
+  }
+  html {
+    height: 100vh !important;
+  }
+  #___gatsby {
+    height: 100% !important;
+  }
+`;

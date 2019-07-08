@@ -23,12 +23,20 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-material-ui',
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    'gatsby-plugin-styled-components',
+    {
       resolve: 'gatsby-remark-prismjs',
       options: {
         inlineCodeMarker: '÷',
       },
     },
-    'gatsby-plugin-material-ui',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

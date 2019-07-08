@@ -1,22 +1,10 @@
 import { createElement as h } from 'react';
 import { Link } from 'gatsby';
-
 import { scale } from '../utils/typography';
-
-import ContributorPanel from './Contributors';
-import layoutStyles from './styles';
+import { GlobalStyle, layoutStyles } from './styles';
 
 const Layout = ({ location: { pathname }, title, children }) => {
-  const {
-    headerInMain,
-    headerInPost,
-    flex,
-    linkStyle,
-    main,
-    body,
-    splitContainer,
-    contributorPanel,
-  } = layoutStyles();
+  const { headerInMain, headerInPost, linkStyle, mainContent, body } = layoutStyles();
 
   const rootPath = `${__PATH_PREFIX__}/`;
   let header;
@@ -57,11 +45,11 @@ const Layout = ({ location: { pathname }, title, children }) => {
   return h(
     'div',
     { className: body },
-    h(ContributorPanel),
+    h(GlobalStyle),
     h(
       'div',
       {
-        className: main,
+        className: mainContent,
       },
       h('header', null, header),
       h('main', null, children),

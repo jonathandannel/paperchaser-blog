@@ -4,7 +4,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import contributorStyles from './styles';
 
 const ContributorPanel = () => {
-  const { main, contributorBox, contributorInfo } = contributorStyles();
+  const { contributorsMain, contributorBox, contributorInfo } = contributorStyles();
 
   const data = useStaticQuery(graphql`
     query ContributorQuery {
@@ -20,14 +20,14 @@ const ContributorPanel = () => {
 
   return h(
     'div',
-    { className: main },
+    { className: contributorsMain },
     data.allContributorsJson.nodes.map(c => h(
         'div',
         { className: contributorBox },
         h('span', { className: contributorInfo }, c.name),
         h('span', { className: contributorInfo }, c.role),
         h('span', { className: contributorInfo }, c.email),
-      ),),
+      )),
   );
 };
 
