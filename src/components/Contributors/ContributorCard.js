@@ -1,13 +1,20 @@
-import { createElement as h } from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { createElement as h, useEffect, useState } from 'react';
+import { Link, Img, useStaticQuery, graphql } from 'gatsby';
 
 import { Avatar, Paper, Card } from '@material-ui/core';
 import { rhythm } from '../../utils/typography';
 
 import contributorStyles from './styles';
 
-const ContributorCard = ({ name, email, role, imageUrl }) => {
+const ContributorCard = ({ name, email, role, image }) => {
+  const [passedImage, setPassedImage] = useState(image);
   const { contributorCard, nameAndAvatar, avatar } = contributorStyles();
+
+  debugger;
+
+  const theImage = image.childImagesharp;
+
+  debugger;
 
   return h(
     'div',
@@ -15,7 +22,7 @@ const ContributorCard = ({ name, email, role, imageUrl }) => {
     h(
       'div',
       { className: nameAndAvatar },
-      h(Avatar, { className: avatar, color: 'green' }, h('img', { href: imageUrl })),
+      h(Avatar, { className: avatar, color: 'green' }, h('img', {})),
       h('span', {}, name),
     ),
     h('span', {}, email),
