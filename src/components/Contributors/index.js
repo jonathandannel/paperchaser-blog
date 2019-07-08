@@ -5,6 +5,7 @@ import { Avatar } from '@material-ui/core';
 import { rhythm } from '../../utils/typography';
 
 import contributorStyles from './styles';
+import ContributorCard from './ContributorCard';
 
 const ContributorPanel = () => {
   const { contributorsMain, contributorBox, contributorInfo } = contributorStyles();
@@ -24,13 +25,7 @@ const ContributorPanel = () => {
   return h(
     'div',
     { className: contributorsMain },
-    data.allContributorsJson.nodes.map(c => h(
-        'div',
-        { className: contributorBox },
-        h('span', { className: contributorInfo }, c.name),
-        h('span', { className: contributorInfo }, c.role),
-        h('span', { className: contributorInfo }, c.email),
-      )),
+    data.allContributorsJson.nodes.map(c => h(ContributorCard, { name: c.name, email: c.email, role: c.role })),
   );
 };
 

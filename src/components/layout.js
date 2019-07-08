@@ -1,4 +1,4 @@
-import { createElement as h } from 'react';
+import { Fragment, createElement as h } from 'react';
 import { Link } from 'gatsby';
 
 import { scale } from '../utils/typography';
@@ -46,30 +46,34 @@ const Layout = ({ location: { pathname }, title, children }) => {
   }
 
   return h(
-    'div',
-    { className: mainContainer },
-    h(GlobalStyle),
-    h(ContributorPanel),
+    Fragment,
+    null,
     h(
       'div',
-      {
-        className: mainContent,
-      },
-      h('span', null, titleText),
-      h('main', null, children),
-    ),
-    h(
-      'footer',
-      null,
-      '\xA9 ',
-      new Date().getFullYear(),
-      ' ',
+      { className: mainContainer },
+      h(GlobalStyle),
+      h(ContributorPanel),
       h(
-        'a',
+        'div',
         {
-          href: 'https://clausehound.com/documents',
+          className: mainContent,
         },
-        'Clausehound',
+        h('span', null, titleText),
+        h('main', null, children),
+      ),
+      h(
+        'footer',
+        null,
+        '\xA9 ',
+        new Date().getFullYear(),
+        ' ',
+        h(
+          'a',
+          {
+            href: 'https://clausehound.com/documents',
+          },
+          'Clausehound',
+        ),
       ),
     ),
   );
