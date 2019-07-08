@@ -5,7 +5,10 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
 
-const BlogIndex = ({ location, data: { site, allMarkdownRemark } }) => {
+const BlogIndex = ({
+  location,
+  data: { site, allMarkdownRemark, contributors, contributorImages },
+}) => {
   const posts = allMarkdownRemark.edges;
   const { tagline, title } = site.siteMetadata;
 
@@ -14,6 +17,8 @@ const BlogIndex = ({ location, data: { site, allMarkdownRemark } }) => {
     {
       location,
       title,
+      contributors,
+      contributorImages,
     },
     h('h4', null, tagline),
     h(SEO, {
@@ -77,6 +82,25 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+          }
+        }
+      }
+    }
+    contributors: allContributorsJson {
+      nodes {
+        name
+        email
+        role
+        image
+      }
+    }
+    contributorImages: allFile(filter: { absolutePath: { regex: "/Contributors/images/" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid(maxHeight: 200, maxWidth: 200, quality: 10) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }

@@ -6,7 +6,7 @@ import { GlobalStyle, layoutStyles } from './styles';
 
 import ContributorPanel from './Contributors';
 
-const Layout = ({ location: { pathname }, title, children }) => {
+const Layout = ({ contributors, location: { pathname }, title, children }) => {
   const { headerInMain, headerInPost, linkStyle, mainContent, mainContainer } = layoutStyles();
 
   const rootPath = `${__PATH_PREFIX__}/`;
