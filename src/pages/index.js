@@ -12,7 +12,16 @@ const BlogIndex = ({
   location,
   data: { site, allMarkdownRemark, contributors, contributorImages },
 }) => {
-  const { avatarImage, avatarRoot } = indexStyles();
+  const {
+    authorContainer,
+    avatarImage,
+    avatarRoot,
+    flexColumn,
+    flex,
+    halfMarginRight,
+    halfMarginTop,
+    halfMarginBottom,
+  } = indexStyles();
   const posts = allMarkdownRemark.edges;
   const { tagline, title } = site.siteMetadata;
 
@@ -39,11 +48,9 @@ const BlogIndex = ({
           key: node.fields.slug,
         },
         h(
-          'h3',
+          'h2',
           {
-            style: {
-              marginBottom: rhythm(1 / 4),
-            },
+            className: halfMarginBottom,
           },
           h(
             Link,
@@ -59,20 +66,26 @@ const BlogIndex = ({
 
         h(
           'div',
-          { style: { display: 'flex', margin: '1rem 0rem 0.5rem 0rem' } },
+          { className: authorContainer },
           h(Avatar, {
             classes: { root: avatarRoot, img: avatarImage },
             srcSet: authorAvatar.srcSet,
           }),
           h(
             'div',
-            { style: { display: 'flex', flexDirection: 'column' } },
+            { className: flexColumn },
             h('small', {}, node.frontmatter.author),
-            h('small', { style: { marginRight: '0.5rem' } }, node.frontmatter.date),
+            h('small', { className: halfMarginRight }, node.frontmatter.date),
           ),
         ),
-        h('small', { style: { marginRight: '0.5rem' } }, `☕   ${node.timeToRead} minute read`),
+        h(
+          'div',
+          { className: `${halfMarginBottom} ${halfMarginTop} ${flex}` },
+          h('small', { className: halfMarginRight }, '☕'),
+          h('small', {}, `${node.timeToRead} minute read`),
+        ),
         h('p', {
+          style: { marginTop: rhythm(0.5) },
           dangerouslySetInnerHTML: {
             __html: node.frontmatter.description || node.excerpt,
           },

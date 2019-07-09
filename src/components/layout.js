@@ -15,7 +15,7 @@ const Layout = ({ location: { pathname }, title, children }) => {
       'h1',
       {
         className: headerInMain,
-        style: { ...scale(1.5) },
+        style: { ...scale(1.75) },
       },
       h(
         Link,
