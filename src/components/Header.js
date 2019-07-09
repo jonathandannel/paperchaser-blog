@@ -20,7 +20,7 @@ const Header = () => {
           to: '/',
           className: linkStyle,
         },
-        h('h3', {}, 'writers'),
+        h('h4', {}, 'writers'),
       ),
       h(
         Link,
@@ -28,7 +28,7 @@ const Header = () => {
           to: '/',
           className: linkStyle,
         },
-        h('h3', {}, 'work'),
+        h('h4', {}, 'work'),
       ),
       h(
         Link,
@@ -36,7 +36,7 @@ const Header = () => {
           to: '/',
           className: linkStyle,
         },
-        h('h3', {}, 'contact'),
+        h('h4', {}, 'contact'),
       ),
     ),
   );

@@ -35,7 +35,7 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
 
 export const headerStyles = makeStyles(({ breakpoints }) => ({
   headerContainer: {
-    width: '90%',
+    maxWidth: '80vw',
     display: 'flex',
   },
   grow: {

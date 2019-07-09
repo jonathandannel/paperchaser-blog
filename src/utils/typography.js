@@ -1,7 +1,11 @@
 import Typography from 'typography';
 import twinPeaksTheme from 'typography-theme-twin-peaks';
 
-twinPeaksTheme.overrideThemeStyles = () => ({});
+twinPeaksTheme.overrideThemeStyles = () => ({
+  // a: {
+  //   backgroundImage: 'none',
+  // },
+});
 
 delete twinPeaksTheme.googleFonts;
 const typography = new Typography(twinPeaksTheme);
