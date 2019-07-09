@@ -12,6 +12,15 @@ const BlogIndex = ({
   const posts = allMarkdownRemark.edges;
   const { tagline, title } = site.siteMetadata;
 
+  // contributors.nodes.map(({ name, email, role }) => h(ContributorCard, {
+  //     name,
+  //     email,
+  //     role,
+  //     image: contributorImages.edges.find(
+  //       ({ node }) => node.name === name.split(' ')[0].toLowerCase(),
+  //     ).node.childImageSharp,
+  //   })),
+
   return h(
     Layout,
     {

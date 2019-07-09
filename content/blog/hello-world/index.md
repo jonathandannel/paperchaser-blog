@@ -1,6 +1,8 @@
 ---
 title: Painless GraphQL schema generation with Gatsby
 date: '2019-05-01T22:12:03.284Z'
+description: In this tutorial, we look at how to easily generate GraphQL schemas with Gatsby.
+author: Joshua Koudys
 ---
 
 It's easy.

@@ -1,14 +1,13 @@
 import Typography from 'typography';
-import twinPeaksTheme from 'typography-theme-twin-peaks';
+import stAnnes from 'typography-theme-st-annes';
 
-twinPeaksTheme.overrideThemeStyles = () => ({
-  // a: {
-  //   backgroundImage: 'none',
+stAnnes.overrideThemeStyles = () => ({
+  // body: {
+  //   fontSize: '18px',
   // },
 });
 
-delete twinPeaksTheme.googleFonts;
-const typography = new Typography(twinPeaksTheme);
+const typography = new Typography(stAnnes);
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== 'production') {
