@@ -1,15 +1,10 @@
 import Typography from 'typography';
-import Wordpress2016 from 'typography-theme-wordpress-2016';
+import twinPeaksTheme from 'typography-theme-twin-peaks';
 
-Wordpress2016.overrideThemeStyles = () => ({
-  'a.gatsby-resp-image-link': {
-    boxShadow: 'none',
-  },
-});
+twinPeaksTheme.overrideThemeStyles = () => ({});
 
-delete Wordpress2016.googleFonts;
-
-const typography = new Typography(Wordpress2016);
+delete twinPeaksTheme.googleFonts;
+const typography = new Typography(twinPeaksTheme);
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== 'production') {
