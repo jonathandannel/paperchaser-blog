@@ -71,7 +71,7 @@ const BlogIndex = ({
             h('small', { style: { marginRight: '0.5rem' } }, node.frontmatter.date),
           ),
         ),
-        h('small', { style: { marginRight: '0.5rem' } }, `${node.timeToRead} minute read`),
+        h('small', { style: { marginRight: '0.5rem' } }, `☕   ${node.timeToRead} minute read`),
         h('p', {
           dangerouslySetInnerHTML: {
             __html: node.frontmatter.description || node.excerpt,
