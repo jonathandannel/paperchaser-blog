@@ -14,7 +14,6 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
   },
   headerInPost: {
     fontSize: '1rem',
-    fontFamily: 'Montserrat, sans-serif',
     marginTop: 0,
   },
   headerInMain: {
