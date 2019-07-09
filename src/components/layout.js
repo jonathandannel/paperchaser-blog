@@ -3,11 +3,8 @@ import { Link } from 'gatsby';
 
 import { scale } from '../utils/typography';
 import { GlobalStyle, layoutStyles } from './styles';
-import Header from './Header';
 
-import ContributorPanel from './Contributors';
-
-const Layout = ({ contributors, contributorImages, location: { pathname }, title, children }) => {
+const Layout = ({ location: { pathname }, title, children }) => {
   const { headerInMain, headerInPost, linkStyle, mainContent, mainContainer } = layoutStyles();
 
   const rootPath = `${__PATH_PREFIX__}/`;
@@ -49,12 +46,10 @@ const Layout = ({ contributors, contributorImages, location: { pathname }, title
   return h(
     Fragment,
     null,
-    h(Header),
     h(
       'div',
       { className: mainContainer },
       h(GlobalStyle),
-      // pathname === rootPath && h(ContributorPanel, { contributors, contributorImages }),
       h(
         'div',
         {
@@ -62,20 +57,6 @@ const Layout = ({ contributors, contributorImages, location: { pathname }, title
         },
         h('span', null, titleText),
         h('main', null, children),
-        h(
-          'footer',
-          null,
-          '\xA9 ',
-          new Date().getFullYear(),
-          ' ',
-          h(
-            'a',
-            {
-              href: 'https://clausehound.com/documents',
-            },
-            'Clausehound',
-          ),
-        ),
       ),
     ),
   );

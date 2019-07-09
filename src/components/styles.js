@@ -33,32 +33,6 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
   },
 }));
 
-export const headerStyles = makeStyles(({ breakpoints }) => ({
-  headerContainer: {
-    maxWidth: '80vw',
-    display: 'flex',
-  },
-  grow: {
-    flexGrow: 2,
-  },
-  linkContainer: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-  },
-  linkStyle: {
-    boxShadow: 'none',
-    marginLeft: '1rem',
-    textDecoration: 'none',
-    color: 'inherit',
-    '&:hover': {
-      color: 'orange',
-    },
-    '& > h3': {
-      marginTop: '2rem',
-    },
-  },
-}));
-
 export const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
