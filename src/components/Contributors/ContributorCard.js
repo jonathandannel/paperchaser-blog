@@ -20,10 +20,10 @@ const ContributorCard = ({ name, email, role, image }) => {
         color: 'green',
         srcSet: image.fluid.srcSet,
       }),
-      h('span', {}, name),
+      h('span', { style: { paddingTop: '0.4rem' } }, name),
     ),
-    h('span', {}, email),
-    h('span', {}, role),
+    // h('span', {}, email),
+    // h('span', {}, role),
   );
 };
 

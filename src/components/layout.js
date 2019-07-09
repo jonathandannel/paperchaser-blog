@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import { scale } from '../utils/typography';
 import { GlobalStyle, layoutStyles } from './styles';
+import Header from './Header';
 
 import ContributorPanel from './Contributors';
 
@@ -11,8 +12,6 @@ const Layout = ({ contributors, contributorImages, location: { pathname }, title
 
   const rootPath = `${__PATH_PREFIX__}/`;
   let titleText;
-
-  console.log(contributorImages, 'asdasdsaddsad');
 
   if (pathname === rootPath) {
     titleText = h(
@@ -50,11 +49,12 @@ const Layout = ({ contributors, contributorImages, location: { pathname }, title
   return h(
     Fragment,
     null,
+    h(Header),
     h(
       'div',
       { className: mainContainer },
       h(GlobalStyle),
-      pathname === rootPath && h(ContributorPanel, { contributors, contributorImages }),
+      // pathname === rootPath && h(ContributorPanel, { contributors, contributorImages }),
       h(
         'div',
         {

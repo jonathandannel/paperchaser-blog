@@ -35,16 +35,27 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
 
 export const headerStyles = makeStyles(({ breakpoints }) => ({
   headerContainer: {
-    width: '100%',
+    width: '90%',
     display: 'flex',
   },
   grow: {
-    flexGrow: 1,
+    flexGrow: 2,
+  },
+  linkContainer: {
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
   linkStyle: {
     boxShadow: 'none',
+    marginLeft: '1rem',
     textDecoration: 'none',
     color: 'inherit',
+    '&:hover': {
+      color: 'orange',
+    },
+    '& > h3': {
+      marginTop: '2rem',
+    },
   },
 }));
 

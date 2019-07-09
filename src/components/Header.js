@@ -5,19 +5,39 @@ import { scale } from '../utils/typography';
 import { headerStyles } from './styles';
 
 const Header = () => {
-  const { headerContainer, grow, linkStyle } = headerStyles();
+  const { headerContainer, grow, linkStyle, linkContainer } = headerStyles();
 
   return h(
     'div',
     { className: headerContainer },
     h('div', { className: grow }),
     h(
-      Link,
-      {
-        to: '/',
-        className: linkStyle,
-      },
-      'about',
+      'div',
+      { className: linkContainer },
+      h(
+        Link,
+        {
+          to: '/',
+          className: linkStyle,
+        },
+        h('h3', {}, 'writers'),
+      ),
+      h(
+        Link,
+        {
+          to: '/',
+          className: linkStyle,
+        },
+        h('h3', {}, 'work'),
+      ),
+      h(
+        Link,
+        {
+          to: '/',
+          className: linkStyle,
+        },
+        h('h3', {}, 'contact'),
+      ),
     ),
   );
 };

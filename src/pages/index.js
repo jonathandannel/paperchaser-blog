@@ -43,7 +43,7 @@ const BlogIndex = ({
             {
               style: {
                 boxShadow: 'none',
-                color: '#ff7878',
+                color: '#ff8102',
               },
               to: node.fields.slug,
             },

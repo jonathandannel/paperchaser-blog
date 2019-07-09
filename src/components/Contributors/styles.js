@@ -5,9 +5,11 @@ const contributorStyles = makeStyles(({ breakpoints }) => ({
   contributorsMain: {
     display: 'flex',
     flexDirection: 'column',
-    background: '#ff7878',
+    background: 'white',
     maxWidth: rhythm(10),
     minWidth: rhythm(10),
+    paddingTop: '8rem',
+    paddingLeft: '5rem',
     padding: `${rhythm(2.25)} ${rhythm(3 / 4)}`,
   },
   contributorBox: {
@@ -22,7 +24,7 @@ const contributorStyles = makeStyles(({ breakpoints }) => ({
     display: 'flex',
     fontSize: '0.8rem',
     flexDirection: 'column',
-    marginBottom: rhythm(1),
+    marginBottom: '1rem',
   },
   nameAndAvatar: {
     display: 'flex',

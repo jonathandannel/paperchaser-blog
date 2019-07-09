@@ -13,14 +13,17 @@ const ContributorPanel = ({ contributors, contributorImages }) => {
   return h(
     'div',
     { className: contributorsMain },
-    contributors.nodes.map(({ name, email, role }) => h(ContributorCard, {
-        name,
-        email,
-        role,
-        image: contributorImages.edges.find(
-          ({ node }) => node.name === name.split(' ')[0].toLowerCase(),
-        ).node.childImageSharp,
-      })),
+    h('h4', null, '/'),
+    h('h4', null, 'writers'),
+    h('h4', null, 'about'),
+    // contributors.nodes.map(({ name, email, role }) => h(ContributorCard, {
+    //     name,
+    //     email,
+    //     role,
+    //     image: contributorImages.edges.find(
+    //       ({ node }) => node.name === name.split(' ')[0].toLowerCase(),
+    //     ).node.childImageSharp,
+    //   })),
   );
 };
 
