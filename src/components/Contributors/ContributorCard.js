@@ -8,18 +8,18 @@ import { rhythm } from '../../utils/typography';
 import contributorStyles from './styles';
 
 const ContributorCard = ({ name, email, role, image }) => {
-  const { contributorCard, nameAndAvatar, avatar } = contributorStyles();
-
-  const b = image;
-  debugger;
-
+  const { contributorCard, nameAndAvatar, avatarRoot, avatarImage } = contributorStyles();
   return h(
     'div',
     { className: contributorCard },
     h(
       'div',
       { className: nameAndAvatar },
-      h(Avatar, { className: avatar, color: 'green', srcSet: image.fluid.srcSet }),
+      h(Avatar, {
+        classes: { root: avatarRoot, img: avatarImage },
+        color: 'green',
+        srcSet: image.fluid.srcSet,
+      }),
       h('span', {}, name),
     ),
     h('span', {}, email),

@@ -27,8 +27,11 @@ const contributorStyles = makeStyles(({ breakpoints }) => ({
   nameAndAvatar: {
     display: 'flex',
   },
-  avatar: {
+  avatarRoot: {
     marginRight: '0.5rem',
+  },
+  avatarImage: {
+    marginBottom: 0,
   },
 }));
 
