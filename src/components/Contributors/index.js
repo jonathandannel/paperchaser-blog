@@ -17,6 +17,8 @@ const ContributorPanel = ({ contributors, contributorImages }) => {
         name,
         email,
         role,
+        image: contributorImages.edges.find(({ node }) => node.name.includes(name[0].toLowerCase()))
+          .node.childImageSharp,
       })),
   );
 };

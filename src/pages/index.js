@@ -97,8 +97,9 @@ export const pageQuery = graphql`
     contributorImages: allFile(filter: { absolutePath: { regex: "/Contributors/images/" } }) {
       edges {
         node {
+          name
           childImageSharp {
-            fluid(maxHeight: 200, maxWidth: 200, quality: 10) {
+            fluid(maxWidth: 200, maxHeight: 200, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

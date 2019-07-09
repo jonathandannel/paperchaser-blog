@@ -12,6 +12,8 @@ const Layout = ({ contributors, contributorImages, location: { pathname }, title
   const rootPath = `${__PATH_PREFIX__}/`;
   let titleText;
 
+  console.log(contributorImages, 'asdasdsaddsad');
+
   if (pathname === rootPath) {
     titleText = h(
       'h1',
