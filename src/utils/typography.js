@@ -2,9 +2,9 @@ import Typography from 'typography';
 import stAnnes from 'typography-theme-st-annes';
 
 stAnnes.overrideThemeStyles = () => ({
-  // a: {
-  //   textDecoration: 'underline',
-  // }
+  a: {
+    color: '#f25f33f5',
+  },
 });
 
 const typography = new Typography(stAnnes);

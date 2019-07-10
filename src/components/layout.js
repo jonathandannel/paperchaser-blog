@@ -8,7 +8,7 @@ const Layout = ({ location: { pathname }, title, children }) => {
   const { headerInMain, headerInPost, linkStyle, mainContent, mainContainer } = layoutStyles();
 
   // Useless.
-  // const rootPath = `${__PATH_PREFIX__}/`;
+  const rootPath = `${__PATH_PREFIX__}/`;
 
   return h(
     Fragment,
@@ -25,8 +25,7 @@ const Layout = ({ location: { pathname }, title, children }) => {
         h(
           'h1',
           {
-            className: headerInMain,
-            style: { ...scale(1.75) },
+            className: pathname === rootPath ? headerInMain : headerInPost,
           },
           h(
             Link,

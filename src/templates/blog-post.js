@@ -1,5 +1,6 @@
 import { createElement as h } from 'react';
 import { Link, graphql } from 'gatsby';
+import { Avatar, Divider } from '@material-ui/core';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -18,8 +19,13 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
     halfMarginBottom,
   } = postStyles();
   const post = data.markdownRemark;
+  const { contributorImages } = data;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
+  const authorAvatar = contributorImages.edges.find(
+    ({ node: { name } }) => name === post.frontmatter.author.split(' ')[0].toLowerCase(),
+  ).node.childImageSharp.fluid;
+
   return h(
     Layout,
     {
@@ -34,27 +40,29 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
       'h1',
       {
         style: {
-          marginTop: rhythm(1),
+          marginTop: rhythm(0.5),
           marginBottom: 0,
-          color: '#fb251b',
+          color: '#f25f33f5',
         },
       },
       post.frontmatter.title,
     ),
+    h('p', { style: { marginTop: rhythm(1), color: 'grey' } }, post.frontmatter.description),
     h(
-      'p',
-      {
-        style: { ...scale(-1 / 5), display: 'block', marginBottom: rhythm(1) },
-      },
-      post.frontmatter.date,
+      'div',
+      { className: authorContainer },
+      h(Avatar, {
+        classes: { root: avatarRoot, img: avatarImage },
+        srcSet: authorAvatar.srcSet,
+      }),
+      h(
+        'div',
+        { className: flexColumn },
+        h('small', {}, post.frontmatter.author),
+        h('small', { className: halfMarginRight }, post.frontmatter.date),
+      ),
     ),
-    h(
-      'p',
-      {
-        style: { ...scale(-1 / 5), display: 'block', marginBottom: rhythm(1) },
-      },
-      post.frontmatter.author,
-    ),
+    h(Divider, { style: { marginTop: rhythm(1), marginBottom: rhythm(1) } }),
     h('div', {
       dangerouslySetInnerHTML: {
         __html: post.html,
@@ -127,6 +135,18 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         author
+      }
+    }
+    contributorImages: allFile(filter: { absolutePath: { regex: "/Contributors/images/" } }) {
+      edges {
+        node {
+          name
+          childImageSharp {
+            fluid(maxWidth: 200, maxHeight: 200, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

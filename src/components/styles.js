@@ -13,7 +13,7 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
     display: 'flex',
   },
   headerInPost: {
-    fontSize: '1rem',
+    fontSize: '1.5rem',
     marginTop: 0,
   },
   headerInMain: {
