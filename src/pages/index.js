@@ -33,7 +33,7 @@ const BlogIndex = ({
       contributors,
       contributorImages,
     },
-    h('h3', null, tagline),
+    h('h3', { style: { color: 'grey' } }, tagline),
     h(SEO, {
       title: 'All posts',
     }),

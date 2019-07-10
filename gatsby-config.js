@@ -3,7 +3,7 @@ module.exports = {
     title: 'paperchaser.io',
     author: 'Jonathan Dannel',
     description: 'Paperchaser tech blog',
-    tagline: 'an iterative process',
+    tagline: 'A collaborative, iterative process in law and technology',
     siteUrl: 'http://localhost:8000',
     social: {
       twitter: 'clausehound',
