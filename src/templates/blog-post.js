@@ -4,20 +4,11 @@ import { Avatar, Divider } from '@material-ui/core';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { rhythm, scale } from '../utils/typography';
+import { rhythm } from '../utils/typography';
 import { postStyles } from '../components/styles';
 
 const BlogPostTemplate = ({ location, pageContext, data }) => {
-  const {
-    authorContainer,
-    avatarImage,
-    avatarRoot,
-    flexColumn,
-    flex,
-    halfMarginRight,
-    halfMarginTop,
-    halfMarginBottom,
-  } = postStyles();
+  const { authorContainer, avatarImage, avatarRoot, flexColumn, halfMarginRight } = postStyles();
   const post = data.markdownRemark;
   const { contributorImages } = data;
   const siteTitle = data.site.siteMetadata.title;

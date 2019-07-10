@@ -1,7 +1,5 @@
 import { Fragment, createElement as h } from 'react';
 import { Link } from 'gatsby';
-
-import { scale } from '../utils/typography';
 import { GlobalStyle, layoutStyles } from './styles';
 
 const Layout = ({ location: { pathname }, title, children }) => {
