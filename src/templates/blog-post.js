@@ -4,8 +4,19 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
+import { postStyles } from './styles';
 
 const BlogPostTemplate = ({ location, pageContext, data }) => {
+  const {
+    authorContainer,
+    avatarImage,
+    avatarRoot,
+    flexColumn,
+    flex,
+    halfMarginRight,
+    halfMarginTop,
+    halfMarginBottom,
+  } = postStyles();
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
@@ -25,6 +36,7 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
         style: {
           marginTop: rhythm(1),
           marginBottom: 0,
+          color: '#fb251b',
         },
       },
       post.frontmatter.title,
@@ -35,6 +47,13 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
         style: { ...scale(-1 / 5), display: 'block', marginBottom: rhythm(1) },
       },
       post.frontmatter.date,
+    ),
+    h(
+      'p',
+      {
+        style: { ...scale(-1 / 5), display: 'block', marginBottom: rhythm(1) },
+      },
+      post.frontmatter.author,
     ),
     h('div', {
       dangerouslySetInnerHTML: {
@@ -107,6 +126,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        author
       }
     }
   }

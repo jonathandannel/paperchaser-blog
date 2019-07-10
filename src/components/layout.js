@@ -7,41 +7,8 @@ import { GlobalStyle, layoutStyles } from './styles';
 const Layout = ({ location: { pathname }, title, children }) => {
   const { headerInMain, headerInPost, linkStyle, mainContent, mainContainer } = layoutStyles();
 
-  const rootPath = `${__PATH_PREFIX__}/`;
-  let titleText;
-
-  if (pathname === rootPath) {
-    titleText = h(
-      'h1',
-      {
-        className: headerInMain,
-        style: { ...scale(1.75) },
-      },
-      h(
-        Link,
-        {
-          to: '/',
-          className: linkStyle,
-        },
-        title,
-      ),
-    );
-  } else {
-    titleText = h(
-      'h3',
-      {
-        className: headerInPost,
-      },
-      h(
-        Link,
-        {
-          className: linkStyle,
-          to: '/',
-        },
-        title,
-      ),
-    );
-  }
+  // Useless.
+  // const rootPath = `${__PATH_PREFIX__}/`;
 
   return h(
     Fragment,
@@ -55,7 +22,21 @@ const Layout = ({ location: { pathname }, title, children }) => {
         {
           className: mainContent,
         },
-        h('span', null, titleText),
+        h(
+          'h1',
+          {
+            className: headerInMain,
+            style: { ...scale(1.75) },
+          },
+          h(
+            Link,
+            {
+              to: '/',
+              className: linkStyle,
+            },
+            title,
+          ),
+        ),
         h('main', null, children),
       ),
     ),
