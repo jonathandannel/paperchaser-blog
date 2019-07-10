@@ -37,7 +37,7 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
       },
       post.frontmatter.title,
     ),
-    h('p', { style: { marginTop: rhythm(0.5), color: 'grey' } }, post.frontmatter.description),
+    h('p', { style: { marginTop: rhythm(0.5), color: '#615c5c' } }, post.frontmatter.description),
     h(
       'div',
       { className: authorContainer },
