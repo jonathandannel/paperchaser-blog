@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm, scale } from '../utils/typography';
-import { postStyles } from './styles';
+import { postStyles } from '../components/styles';
 
 const BlogPostTemplate = ({ location, pageContext, data }) => {
   const {
