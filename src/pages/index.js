@@ -16,6 +16,7 @@ const BlogIndex = ({
     avatarImage,
     avatarRoot,
     flexColumn,
+    tagline,
     flex,
     greyText,
     halfMarginRight,
@@ -23,7 +24,7 @@ const BlogIndex = ({
     halfMarginBottom,
   } = indexStyles();
   const posts = allMarkdownRemark.edges;
-  const { tagline, title } = site.siteMetadata;
+  const { title } = site.siteMetadata;
 
   return h(
     Layout,
@@ -33,7 +34,14 @@ const BlogIndex = ({
       contributors,
       contributorImages,
     },
-    h('h3', { className: greyText }, tagline),
+    h(
+      'p',
+      { className: `${greyText} ${tagline}` },
+      `A code-centric tech blog exploring the collaborative, iterative process of writing software for a changing world.
+        Written and maintained by the developers of the Toronto-based startup `,
+      h('a', { href: 'https://clausehound.com/documents' }, 'Clausehound'),
+      '.',
+    ),
     h(SEO, {
       title: 'All posts',
     }),
@@ -103,7 +111,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        tagline
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

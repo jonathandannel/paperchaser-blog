@@ -37,6 +37,10 @@ export const indexStyles = makeStyles(() => ({
   avatarRoot: {
     marginRight: rhythm(0.5),
   },
+  tagline: {
+    display: 'inline-block',
+    marginBottom: 0,
+  },
   avatarImage: {
     marginBottom: 0,
   },
