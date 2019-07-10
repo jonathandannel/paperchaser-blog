@@ -5,7 +5,7 @@ import { scale } from '../utils/typography';
 import { GlobalStyle, layoutStyles } from './styles';
 
 const Layout = ({ location: { pathname }, title, children }) => {
-  const { headerInMain, headerInPost, linkStyle, mainContent, mainContainer } = layoutStyles();
+  const { headerInMain, headerInPost, noLinkColor, mainContent, mainContainer } = layoutStyles();
 
   // Useless.
   const rootPath = `${__PATH_PREFIX__}/`;
@@ -31,7 +31,7 @@ const Layout = ({ location: { pathname }, title, children }) => {
             Link,
             {
               to: '/',
-              className: linkStyle,
+              className: pathname === rootPath && noLinkColor,
             },
             title,
           ),

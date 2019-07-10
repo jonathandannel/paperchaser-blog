@@ -21,9 +21,7 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
     marginBottom: rhythm(1.5),
     marginTop: 0,
   },
-  linkStyle: {
-    boxShadow: 'none',
-    textDecoration: 'none',
+  noLinkColor: {
     color: 'inherit',
   },
   mainContainer: {

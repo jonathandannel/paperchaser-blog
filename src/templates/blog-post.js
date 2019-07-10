@@ -42,7 +42,6 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
         style: {
           marginTop: rhythm(0.5),
           marginBottom: 0,
-          color: '#f25f33f5',
         },
       },
       post.frontmatter.title,
