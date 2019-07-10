@@ -37,7 +37,7 @@ const BlogIndex = ({
     h(
       'p',
       { className: `${greyText} ${tagline}` },
-      `A code-centric blog that focuses on the collaborative, iterative process of writing software for a changing world.
+      `A code-centric blog that focused on the collaborative, iterative process of writing software for a changing world.
         Written and maintained by the developers of Toronto-based legal tech startup `,
       h('a', { href: 'https://clausehound.com/' }, 'Clausehound'),
       '.',
