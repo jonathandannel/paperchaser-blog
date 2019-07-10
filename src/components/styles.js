@@ -8,6 +8,7 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
     marginRight: 'auto',
     maxWidth: rhythm(30),
     padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+    marginTop: rhythm(1),
   },
   splitContainer: {
     display: 'flex',
