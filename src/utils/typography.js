@@ -3,7 +3,7 @@ import stAnnes from 'typography-theme-st-annes';
 
 stAnnes.overrideThemeStyles = () => ({
   a: {
-    color: '#ff6d06',
+    color: '#e67c32',
   },
 });
 

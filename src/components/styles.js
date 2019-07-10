@@ -8,6 +8,9 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
     marginRight: 'auto',
     maxWidth: rhythm(30),
     padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+    [breakpoints.down('md')]: {
+      padding: `${rhythm(1.5)} ${rhythm(2.5)}`,
+    },
     marginTop: rhythm(1),
   },
   splitContainer: {
@@ -79,6 +82,9 @@ export const postStyles = makeStyles(() => ({
   },
   noMarginBottom: {
     marginBottom: 0,
+  },
+  marginTop: {
+    marginTop: '0.9rem',
   },
   greyText: {
     color: '#615c5c',

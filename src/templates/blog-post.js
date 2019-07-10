@@ -16,6 +16,7 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
     divider,
     listStyle,
     halfMarginTop,
+    marginTop,
     noMarginBottom,
     greyText,
     halfMarginRight,
@@ -45,7 +46,7 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
       },
       post.frontmatter.title,
     ),
-    h('p', { className: `${halfMarginTop} ${greyText}` }, post.frontmatter.description),
+    h('p', { className: ` ${marginTop} ${greyText}` }, post.frontmatter.description),
     h(
       'div',
       { className: authorContainer },
