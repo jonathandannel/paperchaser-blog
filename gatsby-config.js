@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'paperchaser.io',
+    title: 'paperchaser',
     author: 'Jonathan Dannel',
     description: 'Paperchaser',
     siteUrl: 'http://localhost:8000',
