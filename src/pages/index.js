@@ -4,7 +4,6 @@ import { Avatar, Divider } from '@material-ui/core';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { rhythm } from '../utils/typography';
 
 import { indexStyles } from '../components/styles';
 
@@ -18,6 +17,7 @@ const BlogIndex = ({
     avatarRoot,
     flexColumn,
     flex,
+    greyText,
     halfMarginRight,
     halfMarginTop,
     halfMarginBottom,
@@ -33,7 +33,7 @@ const BlogIndex = ({
       contributors,
       contributorImages,
     },
-    h('h3', { style: { color: '#615c5c' } }, tagline),
+    h('h3', { className: greyText }, tagline),
     h(SEO, {
       title: 'All posts',
     }),
@@ -85,7 +85,7 @@ const BlogIndex = ({
           h('small', {}, `${node.timeToRead} minute read`),
         ),
         h('p', {
-          style: { marginTop: rhythm(0.5) },
+          className: halfMarginTop,
           dangerouslySetInnerHTML: {
             __html: node.frontmatter.description || node.excerpt,
           },

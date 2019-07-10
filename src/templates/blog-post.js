@@ -8,7 +8,18 @@ import { rhythm } from '../utils/typography';
 import { postStyles } from '../components/styles';
 
 const BlogPostTemplate = ({ location, pageContext, data }) => {
-  const { authorContainer, avatarImage, avatarRoot, flexColumn, halfMarginRight } = postStyles();
+  const {
+    authorContainer,
+    avatarImage,
+    avatarRoot,
+    flexColumn,
+    divider,
+    listStyle,
+    halfMarginTop,
+    noMarginBottom,
+    greyText,
+    halfMarginRight,
+  } = postStyles();
   const post = data.markdownRemark;
   const { contributorImages } = data;
   const siteTitle = data.site.siteMetadata.title;
@@ -30,14 +41,11 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
     h(
       'h1',
       {
-        style: {
-          marginTop: rhythm(0.5),
-          marginBottom: 0,
-        },
+        className: `${halfMarginTop} ${noMarginBottom}`,
       },
       post.frontmatter.title,
     ),
-    h('p', { style: { marginTop: rhythm(0.5), color: '#615c5c' } }, post.frontmatter.description),
+    h('p', { className: `${halfMarginTop} ${greyText}` }, post.frontmatter.description),
     h(
       'div',
       { className: authorContainer },
@@ -52,7 +60,7 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
         h('small', { className: halfMarginRight }, post.frontmatter.date),
       ),
     ),
-    h(Divider, { style: { marginTop: rhythm(1), marginBottom: rhythm(1) } }),
+    h(Divider, { className: divider }),
     h('div', {
       dangerouslySetInnerHTML: {
         __html: post.html,
@@ -66,13 +74,7 @@ const BlogPostTemplate = ({ location, pageContext, data }) => {
     h(
       'ul',
       {
-        style: {
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          listStyle: 'none',
-          padding: 0,
-        },
+        className: listStyle,
       },
       h(
         'li',

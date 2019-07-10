@@ -28,6 +28,9 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
     height: '100%',
     display: 'flex',
   },
+  greyText: {
+    color: '#615c5c',
+  },
 }));
 
 export const indexStyles = makeStyles(() => ({
@@ -36,6 +39,9 @@ export const indexStyles = makeStyles(() => ({
   },
   avatarImage: {
     marginBottom: 0,
+  },
+  greyText: {
+    color: '#615c5c',
   },
   authorContainer: {
     display: 'flex',
@@ -65,6 +71,23 @@ export const postStyles = makeStyles(() => ({
   },
   avatarImage: {
     marginBottom: 0,
+  },
+  noMarginBottom: {
+    marginBottom: 0,
+  },
+  greyText: {
+    color: '#615c5c',
+  },
+  listStyle: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    listStyle: 'none',
+    padding: 0,
+  },
+  divider: {
+    marginTop: rhythm(1),
+    marginBottom: rhythm(1),
   },
   authorContainer: {
     display: 'flex',

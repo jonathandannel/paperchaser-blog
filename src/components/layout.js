@@ -5,7 +5,6 @@ import { GlobalStyle, layoutStyles } from './styles';
 const Layout = ({ location: { pathname }, title, children }) => {
   const { headerInMain, headerInPost, noLinkColor, mainContent, mainContainer } = layoutStyles();
 
-  // Useless.
   const rootPath = `${__PATH_PREFIX__}/`;
 
   return h(
