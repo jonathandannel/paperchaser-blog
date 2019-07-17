@@ -24,13 +24,13 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
     fontSize: '3rem',
     marginBottom: rhythm(1.5),
     marginTop: 0,
+    display: 'flex',
   },
   noLinkColor: {
     color: 'inherit',
   },
   mainContainer: {
     height: '100%',
-    display: 'flex',
   },
   greyText: {
     color: '#615c5c',
