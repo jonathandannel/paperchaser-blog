@@ -1,6 +1,6 @@
 import { Fragment, createElement as h } from 'react';
 import { Link } from 'gatsby';
-import { GlobalStyle, layoutStyles } from './styles';
+import { layoutStyles } from './styles';
 
 const Layout = ({ location: { pathname }, title, children }) => {
   const { headerInMain, headerInPost, noLinkColor, mainContent, mainContainer } = layoutStyles();
@@ -13,7 +13,6 @@ const Layout = ({ location: { pathname }, title, children }) => {
     h(
       'div',
       { className: mainContainer },
-      // h(GlobalStyle),
       h(
         'div',
         {

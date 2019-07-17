@@ -20,6 +20,7 @@ const BlogIndex = ({
     flex,
     greyText,
     halfMarginRight,
+    orangeLink,
     halfMarginTop,
     halfMarginBottom,
   } = indexStyles();
@@ -39,7 +40,7 @@ const BlogIndex = ({
       { className: `${greyText} ${tagline}` },
       `A code-centric blog focusing on the collaborative, iterative process of writing software for a changing world.
         Written and maintained by the developers of Toronto-based legal tech startup `,
-      h('a', { href: 'https://clausehound.com/' }, 'Clausehound'),
+      h('a', { className: orangeLink, href: 'https://clausehound.com/' }, 'Clausehound'),
       '.',
     ),
     h(SEO, {

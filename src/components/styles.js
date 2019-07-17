@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core';
-import { createGlobalStyle } from 'styled-components';
 import { rhythm } from '../utils/typography';
 
 export const layoutStyles = makeStyles(({ breakpoints }) => ({
@@ -9,7 +8,9 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
     maxWidth: rhythm(30),
     padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
     [breakpoints.down('md')]: {
-      padding: `${rhythm(1.5)} ${rhythm(2.5)}`,
+      padding: rhythm(1),
+      marginTop: 0,
+      maxWidth: 'auto',
     },
     marginTop: rhythm(1),
   },
@@ -47,6 +48,9 @@ export const indexStyles = makeStyles(() => ({
   },
   greyText: {
     color: '#615c5c',
+  },
+  orangeLink: {
+    color: '#e67c32',
   },
   authorContainer: {
     display: 'flex',
