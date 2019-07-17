@@ -13,9 +13,6 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
     },
     marginTop: rhythm(1),
   },
-  splitContainer: {
-    display: 'flex',
-  },
   headerInPost: {
     fontSize: '1.5rem',
     marginTop: 0,
@@ -121,18 +118,3 @@ export const postStyles = makeStyles(() => ({
     marginBottom: rhythm(0.5),
   },
 }));
-
-export const GlobalStyle = createGlobalStyle`
-  body {
-    height: 100%;
-  }
-  html {
-    height: 100vh;
-  }
-  #___gatsby {
-    height: 100%;
-  }
-  #gatsby-focus-wrapper {
-    height: 100%;
-  }
-`;
