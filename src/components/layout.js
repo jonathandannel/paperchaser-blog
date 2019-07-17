@@ -13,7 +13,7 @@ const Layout = ({ location: { pathname }, title, children }) => {
     h(
       'div',
       { className: mainContainer },
-      h(GlobalStyle),
+      // h(GlobalStyle),
       h(
         'div',
         {
