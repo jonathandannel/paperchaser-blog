@@ -51,7 +51,7 @@ It's easy.
 ```
 
 - Add a script to your `package.json`:
-  `GATSBY_GRAPHQL_IDE=playground gatsby develop`
+  `javascript GATSBY_GRAPHQL_IDE=playground gatsby develop`
 
 - Run it, and navigate to the GraphQL development playground. Click the 'schema' tab on the right, and voila:
 
