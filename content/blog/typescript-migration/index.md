@@ -9,13 +9,13 @@ If you're a developer that works with Javascript in any sense, you've likely alr
 
 # What Typescript does
 
-**TL;DR** Typescript is a static (read: _not_ runtime) type-checker. Before your code ever runs, it cross-references your Javascript code's variable and function return types to ensure that everything is what it says it is, thus greatly reducing the chance of runtime errors, unexpected behavior, and strange side effects in production. Typescript, so to say, aims to nip problems in the bud.
+**TL;DR** Typescript is a static (read: _not_ runtime) type-checker. Before your code ever runs, it cross-references your Javascript code's variable and function return types to ensure that everything is actually what it says it is (or supposed to be), thus greatly reducing the chance of runtime errors, unexpected behavior, and strange side effects in production. Typescript, so to say, aims to nip problems in the bud.
 
-# A little bit of background
+# It just seemed like a lot of work. We already had a lot to do
 
 Our team at [Clausehound](https://clausehound.com) prides itself in staying current and up-to-date with new, cutting edge tech in the Javascript ecosystem. We have historically been early adopters of new patterns, be it observables, immutable data structures, the latest ECMA spec (we're especially fond of the the pipeline `|>` operator, more on that another time), React hooks, or the blessing that is GraphQL. Yet, when it came to Typescript -- despite the incredible traction it seems to have been picking up -- we have always been a little hesitant.
 
-# It just seemed like a lot of work. We already had a lot to do.
+# A bit of background
 
 Our app has gone through endless iterations over the course of its lifespan in these past 5 or 6 years. The codebase for our front end, especially -- written entirely in React -- despite our constant and diligent pruning, contains hundreds of components, actions, many large reducers, and pages upon pages of handlers. **Keeping all these moving parts in sync with one another takes a lot of work.**
 
