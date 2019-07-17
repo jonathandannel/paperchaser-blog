@@ -129,7 +129,6 @@ export const GlobalStyle = createGlobalStyle`
 .gatsby-highlight-code-line {
   background-color: #feb;
   display: block;
-  font-size: 0.9rem;
   margin-right: -1em;
   margin-left: -1em;
   padding-right: 1em;
@@ -140,6 +139,7 @@ export const GlobalStyle = createGlobalStyle`
   background-color: #fdf6e3;
   border-radius: 0.3em;
   margin: 0.5em 0;
+  font-size: 0.95rem;
   padding: 1em;
   overflow: auto;
 }
@@ -154,5 +154,6 @@ export const GlobalStyle = createGlobalStyle`
 }
 code[class="language-text"] {
   white-space: normal;
+  font-size: 0.95rem;
 }
 `;
