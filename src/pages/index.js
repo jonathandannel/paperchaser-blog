@@ -91,7 +91,7 @@ const BlogIndex = ({
           'div',
           { className: `${halfMarginBottom} ${halfMarginTop} ${flex}` },
           h('small', { className: halfMarginRight }, '☕'),
-          h('small', {}, `${node.timeToRead} minute read`),
+          h('small', { className: greyText }, `${node.timeToRead} minute read`),
         ),
         h('p', {
           className: halfMarginTop,

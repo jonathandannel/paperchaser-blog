@@ -103,7 +103,7 @@ query MyQuery {
 
 which returns our data:
 
-```json
+```javascript
 {
   "data": {
     "allContributorsJson": {

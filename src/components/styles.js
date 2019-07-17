@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core';
+import { createGlobalStyle } from 'styled-components';
 import { rhythm } from '../utils/typography';
 
 export const layoutStyles = makeStyles(({ breakpoints }) => ({
@@ -6,6 +7,7 @@ export const layoutStyles = makeStyles(({ breakpoints }) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     maxWidth: rhythm(30),
+    wordWrap: 'break-word',
     padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
     [breakpoints.down('md')]: {
       padding: rhythm(1),
@@ -122,3 +124,30 @@ export const postStyles = makeStyles(() => ({
     marginBottom: rhythm(0.5),
   },
 }));
+
+export const GlobalStyle = createGlobalStyle`
+.gatsby-highlight-code-line {
+  background-color: #feb;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f99;
+}
+.gatsby-highlight {
+  background-color: #fdf6e3;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+`;
